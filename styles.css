@@ -1,0 +1,203 @@
+:root{
+    --fuentePrincipal: 'Kumbh Sans', sans-serif;;
+    
+    --gray: #e1e1e1;
+    /* Text */
+    --VeryDarkDesaturatedBlue: hsl(238, 29%, 16%);
+    --SoftRed: hsl(14, 88%, 65%);
+
+    /*Gradient */
+    --SoftViolet: hsl(273, 75%, 66%);
+    --SoftBlue: hsl(240, 73%, 65%);
+
+    /* ### Neutral */
+    /* #### Text */
+    --VeryDarkGrayishBlue: hsl(237, 12%, 33%);
+    --DarkGrayishBlue: hsl(240, 6%, 50%);
+
+    /* #### Dividers */
+    --LightGrayishBlue: hsl(240, 5%, 91%);
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body{
+    font-family: var(--fuentePrincipal);
+    font-size: 12px !important;
+    line-height: 2;
+    margin: 0;
+    background: linear-gradient(var(--SoftViolet), var(--SoftBlue));
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+/** Globales **/
+.contenedor{
+    max-width: 375;
+    width: 90%;
+    margin: 0 auto;
+}
+@media (min-width: 600px){ 
+    .contenedor{
+        max-width: 90rem;
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+a{
+    text-decoration: none;
+}
+h1, h2, h3, h4{
+    line-height: 1.2;
+}
+img{
+    max-width: 100%;
+}
+.mt-30{
+    margin-top: 12rem;
+}
+.mt-50{
+    margin-top: 10rem;
+}
+@media (min-width: 600px){ 
+    .mt-50{
+        margin-top: 15px;
+    }
+}
+.centrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Card principal*/
+.card-raiz{
+    border-radius: 20px;
+    background-color: white;
+    display: grid;
+}
+@media (min-width: 600px){ 
+    .card-raiz{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.card-faq{
+    border-bottom: 1.5px solid var(--LightGrayishBlue);
+    transition: all .10s linear;
+}
+.card-faq:last-child{
+    margin-bottom: 5rem;
+}
+#pregunta:hover{
+    color: var(--SoftRed);
+    cursor: pointer;
+}
+.faq-title{
+    font-size: 24px;
+    text-align: center;
+}
+@media (min-width: 600px){ 
+    .faq-title{
+        font-size: 32px;
+        text-align: left;
+        padding: 0 2rem;
+    }
+}
+.contenedor-faq{
+    padding: 1rem 2rem;
+}
+.pregunta{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.pregunta-titulo{
+    color: var(--VeryDarkGrayishBlue);
+    margin: 5px 0;
+    transition: all .25s linear;
+    font-size: 14px;
+}
+.respuesta-contenido{
+    color: var(--DarkGrayishBlue);
+    height: 0;
+    overflow: hidden;
+    transition: all .25s ease-in-out;
+    margin: 5px 0;
+}
+.respuesta-contenido.activo{
+    height: 50px;
+}
+.arrow{
+    transition: all .25s ease-in-out;
+}
+.arrow.up{
+    transform: rotate(180deg); 
+}
+.negrita{
+    font-weight: 700;
+    color: var(--VeryDarkDesaturatedBlue);
+}
+.contenedor-images{
+    position: relative;
+}
+.bg-pattern{
+    background-image: url(images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 200px;
+    width: 200px;
+    top: -60px;
+    left: calc(50% - 100px);
+    position: absolute;
+}
+@media (min-width: 600px){ 
+    .bg-pattern{
+        background-image: url(images/bg-pattern-desktop.svg);
+        left: -50px;
+        top: 50px;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+}
+.bg-women{
+    background-image: url(images/illustration-woman-online-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 200px;
+    width: 200px;
+    top: -114px;
+    left: calc(50% - 100px);
+    position: absolute;
+}
+@media (min-width: 600px){ 
+    .bg-women{
+        background-image: url(images/illustration-woman-online-desktop.svg);
+        left: -70px;
+        top: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+    }
+}
+@media (min-width: 600px){ 
+    .bg-cube{
+        background-image: url(images/illustration-box-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        height: 100%;
+        width: 240px;
+        position: absolute;
+        left: -120px;
+        top: 50px;
+        z-index: 3;
+    }
+}
